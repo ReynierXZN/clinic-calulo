@@ -1,0 +1,30 @@
+<h2>Daily Service Records</h2>
+
+<form (ngSubmit)="save()">
+  <input type="date" [(ngModel)]="form.date" name="date" required>
+  <input type="text" [(ngModel)]="form.patientName" name="patientName" placeholder="Patient Name">
+  <input type="number" [(ngModel)]="form.age" name="age" placeholder="Age">
+  <select [(ngModel)]="form.gender" name="gender">
+    <option>Male</option>
+    <option>Female</option>
+    <option>Other</option>
+  </select>
+  <input type="text" [(ngModel)]="form.sicknessDiagnosed" name="sicknessDiagnosed" placeholder="Sickness Diagnosed">
+  <input type="text" [(ngModel)]="form.treatmentProvided" name="treatmentProvided" placeholder="Treatment Provided">
+  <input type="text" [(ngModel)]="form.attendingPhysician" name="attendingPhysician" placeholder="Physician">
+  <button type="submit">{{ editId ? 'Update' : 'Add' }}</button>
+</form>
+
+<hr>
+
+<table>
+  <tr *ngFor="let r of records">
+    <td>{{ r.date }}</td>
+    <td>{{ r.patientName }}</td>
+    <td>{{ r.sicknessDiagnosed }}</td>
+    <td>
+      <button (click)="edit(r)">Edit</button>
+      <button (click)="remove(r.id)">Delete</button>
+    </td>
+  </tr>
+</table>
