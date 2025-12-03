@@ -15,7 +15,9 @@ import {
   selector: 'app-daily-service-record',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './daily-service-record.html'
+  templateUrl: './daily-service-record.html',
+  styleUrls: ['./daily-service-record.css']
+   
 })
 export class DailyServiceRecord {
 
@@ -23,12 +25,9 @@ export class DailyServiceRecord {
 
   form = {
     date: '',
-    patientName: '',
-    age: null,
-    gender: '',
-    sicknessDiagnosed: '',
-    treatmentProvided: '',
-    attendingPhysician: ''
+    employeeName: '',
+    serviceType: '',
+    notes: ''
   };
 
   records: any[] = [];
@@ -67,12 +66,9 @@ export class DailyServiceRecord {
   reset() {
     this.form = {
       date: '',
-      patientName: '',
-      age: null,
-      gender: '',
-      sicknessDiagnosed: '',
-      treatmentProvided: '',
-      attendingPhysician: ''
+      employeeName: '',
+      serviceType: '',
+      notes: ''
     };
     this.editId = null;
   }

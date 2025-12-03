@@ -1,0 +1,52 @@
+.dark-card {
+  background: #1f1f1f;
+  border: 1px solid #2c2c2c;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.dark-input,
+.form-control {
+  background-color: #2a2a2a !important;
+  color: #e6e6e6 !important;
+  border: 1px solid #3a3a3a !important;
+  border-radius: 8px !important;
+  padding: 10px !important;
+}
+
+.dark-input:focus,
+.form-control:focus {
+  border-color: #0d6efd !important;
+  background-color: #323232 !important;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.daily-table {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  margin-top: 20px;
+}
+
+/* Table header */
+.table-header-dark {
+  background-color: #111 !important;
+  color: #fff !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Table cells and rows */
+.table-dark th,
+.table-dark td {
+  padding: 15px 20px;
+  vertical-align: middle;
+}
+
+/* Action buttons */
+.table-dark .btn-info { background-color: #0dcaf0; }
+.table-dark .btn-info:hover { background-color: #0bb8d8; }
+.table-dark .btn-danger { background-color: #dc3545; }
+.table-dark .btn-danger:hover { background-color: #c82333; }

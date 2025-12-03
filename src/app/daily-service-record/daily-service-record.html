@@ -1,30 +1,60 @@
-<h2>Daily Service Records</h2>
+<div class="container mt-4">
+  <h2 class="mb-4 text-center">Daily Service Record</h2>
 
-<form (ngSubmit)="save()">
-  <input type="date" [(ngModel)]="form.date" name="date" required>
-  <input type="text" [(ngModel)]="form.patientName" name="patientName" placeholder="Patient Name">
-  <input type="number" [(ngModel)]="form.age" name="age" placeholder="Age">
-  <select [(ngModel)]="form.gender" name="gender">
-    <option>Male</option>
-    <option>Female</option>
-    <option>Other</option>
-  </select>
-  <input type="text" [(ngModel)]="form.sicknessDiagnosed" name="sicknessDiagnosed" placeholder="Sickness Diagnosed">
-  <input type="text" [(ngModel)]="form.treatmentProvided" name="treatmentProvided" placeholder="Treatment Provided">
-  <input type="text" [(ngModel)]="form.attendingPhysician" name="attendingPhysician" placeholder="Physician">
-  <button type="submit">{{ editId ? 'Update' : 'Add' }}</button>
-</form>
+  <!-- Form -->
+  <form (ngSubmit)="save()" class="mb-5 dark-card p-4 rounded-3 shadow">
+    <div class="row g-3">
+      <div class="col-md-3">
+        <label for="date" class="form-label">Date</label>
+        <input type="date" id="date" class="form-control dark-input" [(ngModel)]="form.date" name="date" required>
+      </div>
 
-<hr>
+      <div class="col-md-3">
+        <label for="employeeName" class="form-label">Employee Name</label>
+        <input type="text" id="employeeName" class="form-control dark-input" [(ngModel)]="form.employeeName" name="employeeName" required>
+      </div>
 
-<table>
-  <tr *ngFor="let r of records">
-    <td>{{ r.date }}</td>
-    <td>{{ r.patientName }}</td>
-    <td>{{ r.sicknessDiagnosed }}</td>
-    <td>
-      <button (click)="edit(r)">Edit</button>
-      <button (click)="remove(r.id)">Delete</button>
-    </td>
-  </tr>
-</table>
+      <div class="col-md-3">
+        <label for="serviceType" class="form-label">Service Type</label>
+        <input type="text" id="serviceType" class="form-control dark-input" [(ngModel)]="form.serviceType" name="serviceType" required>
+      </div>
+
+      <div class="col-md-3">
+        <label for="notes" class="form-label">Notes</label>
+        <input type="text" id="notes" class="form-control dark-input" [(ngModel)]="form.notes" name="notes">
+      </div>
+    </div>
+
+    <div class="mt-3 text-end">
+      <button type="submit" class="btn btn-primary me-2">{{ editId ? 'Update' : 'Add' }} Record</button>
+      <button type="button" class="btn btn-secondary" (click)="reset()">Reset</button>
+    </div>
+  </form>
+
+  <!-- Records Table -->
+  <div class="table-responsive">
+    <table class="table table-dark table-hover align-middle mb-0">
+      <thead class="table-header-dark">
+        <tr>
+          <th>Date</th>
+          <th>Employee Name</th>
+          <th>Service Type</th>
+          <th>Notes</th>
+          <th class="text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of records">
+          <td>{{ record.date }}</td>
+          <td>{{ record.employeeName }}</td>
+          <td>{{ record.serviceType }}</td>
+          <td>{{ record.notes }}</td>
+          <td class="text-center">
+            <button class="btn btn-sm btn-info me-1" (click)="edit(record)">Edit</button>
+            <button class="btn btn-sm btn-danger" (click)="remove(record.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

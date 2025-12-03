@@ -1,1 +1,53 @@
-<p>water-analysis works!</p>
+<div class="container mt-4">
+  <h2 class="mb-4 text-center">Water Analysis Records</h2>
+
+  <!-- Form -->
+  <form (ngSubmit)="save()" class="mb-5">
+    <div class="row g-3">
+      <div class="col-md-4">
+        <label for="date" class="form-label">Date</label>
+        <input type="date" id="date" class="form-control" [(ngModel)]="form.date" name="date" required>
+      </div>
+
+      <div class="col-md-4">
+        <label for="sourceAddress" class="form-label">Source Address</label>
+        <input type="text" id="sourceAddress" class="form-control" [(ngModel)]="form.sourceAddress" name="sourceAddress" required>
+      </div>
+
+      <div class="col-md-4">
+        <label for="waterStatus" class="form-label">Water Status</label>
+        <input type="text" id="waterStatus" class="form-control" [(ngModel)]="form.waterStatus" name="waterStatus" required>
+      </div>
+    </div>
+
+    <div class="mt-3 text-end">
+      <button type="submit" class="btn btn-primary me-2">{{ editId ? 'Update' : 'Add' }} Record</button>
+      <button type="button" class="btn btn-secondary" (click)="reset()">Reset</button>
+    </div>
+  </form>
+
+  <!-- Records Table -->
+  <div class="table-responsive">
+    <table class="table table-striped table-hover align-middle">
+      <thead class="table-dark">
+        <tr>
+          <th>Date</th>
+          <th>Source Address</th>
+          <th>Water Status</th>
+          <th class="text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of records">
+          <td>{{ record.date }}</td>
+          <td>{{ record.sourceAddress }}</td>
+          <td>{{ record.waterStatus }}</td>
+          <td class="text-center">
+            <button class="btn btn-sm btn-info me-1" (click)="edit(record)">Edit</button>
+            <button class="btn btn-sm btn-danger" (click)="remove(record.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

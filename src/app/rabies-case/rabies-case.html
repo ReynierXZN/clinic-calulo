@@ -1,1 +1,67 @@
-<p>rabies-case works!</p>
+<div class="container mt-4 rabies-dark">
+  <h2 class="mb-4 text-center fw-bold text-light">Rabies Case Records</h2>
+
+  <!-- Form -->
+  <form (ngSubmit)="save()" class="mb-5 dark-card p-4 rounded-3 shadow">
+    <div class="row g-3">
+      <div class="col-md-3">
+        <label for="patientName" class="form-label">Patient Name</label>
+        <input type="text" id="patientName" class="form-control dark-input" [(ngModel)]="form.patientName" name="patientName" required>
+      </div>
+
+      <div class="col-md-2">
+        <label for="age" class="form-label">Age</label>
+        <input type="number" id="age" class="form-control dark-input" [(ngModel)]="form.age" name="age" required>
+      </div>
+
+      <div class="col-md-3">
+        <label for="dateOfBite" class="form-label">Date of Bite</label>
+        <input type="date" id="dateOfBite" class="form-control dark-input" [(ngModel)]="form.dateOfBite" name="dateOfBite" required>
+      </div>
+
+      <div class="col-md-2">
+        <label for="biteLocation" class="form-label">Bite Location</label>
+        <input type="text" id="biteLocation" class="form-control dark-input" [(ngModel)]="form.biteLocation" name="biteLocation" required>
+      </div>
+
+      <div class="col-md-2">
+        <label for="vaccinationStatus" class="form-label">Vaccination Status</label>
+        <input type="text" id="vaccinationStatus" class="form-control dark-input" [(ngModel)]="form.vaccinationStatus" name="vaccinationStatus">
+      </div>
+    </div>
+
+    <div class="mt-3 text-end">
+      <button type="submit" class="btn btn-primary me-2">{{ editId ? 'Update' : 'Add' }} Case</button>
+      <button type="button" class="btn btn-secondary" (click)="reset()">Reset</button>
+    </div>
+  </form>
+
+  <!-- Records Table -->
+  <div class="table-responsive dark-card p-3 rounded-3 shadow">
+    <table class="table table-dark table-hover align-middle">
+      <thead class="table-header-dark">
+        <tr>
+          <th>Patient Name</th>
+          <th>Age</th>
+          <th>Date of Bite</th>
+          <th>Bite Location</th>
+          <th>Vaccination Status</th>
+          <th class="text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of records">
+          <td>{{ record.patientName }}</td>
+          <td>{{ record.age }}</td>
+          <td>{{ record.dateOfBite }}</td>
+          <td>{{ record.biteLocation }}</td>
+          <td>{{ record.vaccinationStatus }}</td>
+          <td class="text-center">
+            <button class="btn btn-sm btn-info me-1" (click)="edit(record)">Edit</button>
+            <button class="btn btn-sm btn-danger" (click)="remove(record.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

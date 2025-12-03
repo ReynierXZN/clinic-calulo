@@ -1,0 +1,83 @@
+/* Table Container */
+.table-responsive {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  margin-top: 20px;
+}
+
+/* Table Header */
+.table-header-dark {
+  background-color: #111 !important;
+  color: #fff !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Table Cells - increase padding */
+.table-dark th,
+.table-dark td {
+  padding: 15px 20px; /* more space horizontally and vertically */
+  vertical-align: middle;
+}
+
+/* Adjust column widths for better spacing */
+.table-dark th:nth-child(1), 
+.table-dark td:nth-child(1) { width: 20%; } /* Patient Name */
+.table-dark th:nth-child(2), 
+.table-dark td:nth-child(2) { width: 8%; }  /* Age */
+.table-dark th:nth-child(3), 
+.table-dark td:nth-child(3) { width: 15%; } /* Date of Bite */
+.table-dark th:nth-child(4), 
+.table-dark td:nth-child(4) { width: 20%; } /* Bite Location */
+.table-dark th:nth-child(5), 
+.table-dark td:nth-child(5) { width: 20%; } /* Vaccination Status */
+.table-dark th:nth-child(6), 
+.table-dark td:nth-child(6) { width: 17%; } /* Actions */
+
+/* Table Rows */
+.table-dark tbody tr {
+  border-bottom: 1px solid #2e2e2e;
+  transition: background-color 0.3s;
+}
+
+.table-dark tbody tr:hover {
+  background-color: #222222;
+}
+
+/* Action Buttons */
+.table-dark .btn {
+  font-size: 13px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.table-dark .btn-info {
+  background-color: #0dcaf0;
+  border-color: #0dcaf0;
+}
+
+.table-dark .btn-info:hover {
+  background-color: #0bb8d8;
+}
+
+.table-dark .btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.table-dark .btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* Responsive scroll shadow */
+.table-responsive::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 10px;
+}

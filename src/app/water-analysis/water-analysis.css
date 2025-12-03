@@ -1,0 +1,119 @@
+/* ===========================
+   DARK CARD (Form)
+   =========================== */
+.dark-card {
+  background: #1f1f1f;
+  border: 1px solid #2c2c2c;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+/* ===========================
+   INPUTS
+   =========================== */
+.dark-input,
+.form-control {
+  background-color: #2a2a2a !important;
+  color: #e6e6e6 !important;
+  border: 1px solid #3a3a3a !important;
+  border-radius: 8px !important;
+  padding: 10px !important;
+}
+
+.dark-input:focus,
+.form-control:focus {
+  border-color: #0d6efd !important;
+  background-color: #323232 !important;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Form labels */
+.form-label {
+  font-weight: 600;
+  color: #e6e6e6;
+}
+
+/* ===========================
+   TABLE CONTAINER
+   =========================== */
+.table-responsive.daily-table {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  margin-top: 20px;
+}
+
+/* Table Header */
+.table-header-dark {
+  background-color: #111 !important;
+  color: #fff !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Table Cells - increase padding */
+.table-dark th,
+.table-dark td {
+  padding: 15px 20px; /* more space horizontally and vertically */
+  vertical-align: middle;
+}
+
+/* Adjust column widths for better spacing */
+.table-dark th:nth-child(1), 
+.table-dark td:nth-child(1) { width: 25%; } /* Date */
+.table-dark th:nth-child(2), 
+.table-dark td:nth-child(2) { width: 35%; } /* Source Address */
+.table-dark th:nth-child(3), 
+.table-dark td:nth-child(3) { width: 20%; } /* Water Status */
+.table-dark th:nth-child(4), 
+.table-dark td:nth-child(4) { width: 20%; } /* Actions */
+
+/* Table Rows */
+.table-dark tbody tr {
+  border-bottom: 1px solid #2e2e2e;
+  transition: background-color 0.3s;
+}
+
+.table-dark tbody tr:hover {
+  background-color: #222222;
+}
+
+/* Action Buttons */
+.table-dark .btn {
+  font-size: 13px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.table-dark .btn-info {
+  background-color: #0dcaf0;
+  border-color: #0dcaf0;
+}
+
+.table-dark .btn-info:hover {
+  background-color: #0bb8d8;
+}
+
+.table-dark .btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.table-dark .btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* ===========================
+   SCROLLBAR (optional)
+   =========================== */
+.table-responsive::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 10px;
+}
